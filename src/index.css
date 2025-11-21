@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary-dark: #0b040c;
+  --color-grayed: #9a9a9a;
+}
+
+@layer base {
+  :root {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+  }
+  body {
+    @apply bg-primary-dark text-white;
+  }
+}
