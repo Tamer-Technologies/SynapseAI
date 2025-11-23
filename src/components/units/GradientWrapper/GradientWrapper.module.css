@@ -1,0 +1,61 @@
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.wrapper {
+  --displacement-factor: calc(
+    var(--edge-size) + (var(--border-width) * 0.4142)
+  );
+  --gradient-border: conic-gradient(from var(--angle), var(--gradient-colors));
+
+  font-family: "Aldrich", sans-serif;
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--edge-size)) 0,
+    100% calc(0% + var(--edge-size)),
+    100% 100%,
+    0 100%
+  );
+
+  animation: wrapper-loop var(--animation-speed) linear infinite;
+}
+
+.wrapper::before {
+  content: "";
+  background: var(--gradient-border);
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.wrapper::after {
+  content: "";
+  background-color: var(--color-primary-dark);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: polygon(
+    /* Top Left */ var(--border-width) var(--border-width),
+    /* Top Right 1  */ calc(100% - var(--displacement-factor))
+      var(--border-width),
+    /* Top Right 2 */ calc(100% - var(--border-width))
+      var(--displacement-factor),
+    /* Bottom Right */ calc(100% - var(--border-width))
+      calc(100% - var(--border-width)),
+    /* Bottom Left */ var(--border-width) calc(100% - var(--border-width))
+  );
+}
+
+@keyframes wrapper-loop {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
