@@ -37,14 +37,22 @@ const Button = ({
     if (variant === "gradient")
       return (
         <GradientWrapper className={wrapperClassName} {...rest}>
-          <Link className={`cursor-pointer ${contentClassName}`} to={href}>
+          <Link
+            className={`cursor-pointer ${contentClassName}`}
+            onClick={onClick}
+            to={href}
+          >
             {children}
           </Link>
         </GradientWrapper>
       );
 
     return (
-      <Link className={`cursor-pointer ${contentClassName}`} to={href}>
+      <Link
+        className={`cursor-pointer ${contentClassName}`}
+        onClick={onClick}
+        to={href}
+      >
         {children}
       </Link>
     );

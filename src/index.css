@@ -4,9 +4,10 @@
 @theme {
   --color-primary-dark: #0b040c;
   --color-grayed: #9a9a9a;
-  --color-primary-color1: #96569f;
+  --color-primary-color1: #c261d1;
   --color-primary-color2: #58569f;
   --font-sharp: "Aldrich", sans-serif;
+  --breakpoint-navbar: 65.3rem;
 }
 
 @layer base {
