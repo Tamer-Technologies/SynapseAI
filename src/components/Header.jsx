@@ -1,7 +1,7 @@
 import Logo from "../assets/images/logo.png";
 import { authPortal, navigation } from "../constants/index";
 import { Link, useLocation } from "react-router-dom";
-import Button from "./Button";
+import Button from "./units/Button";
 import HamburgerMenu from "../assets/icons/hamburger-icon.svg?react";
 import CloseMenu from "../assets/icons/close-icon.svg?react";
 import { useState } from "react";
@@ -21,14 +21,14 @@ const Header = () => {
   };
 
   return (
-    <header className="py-5.5 px-7.5 font-sharp relative text-grayed text-md uppercase flex items-center gap-7 border-b border-grayed bg-primary-dark isolate z-50 justify-between">
+    <header className="py-5.5 px-7.5 font-sharp fixed w-full text-gray-md text-md uppercase flex items-center gap-7 border-b border-gray-dark bg-primary-dark isolate z-50 justify-between">
       <Link to="#hero">
         <img src={Logo} alt="logo" width={226} height={48} />
       </Link>
 
       <Button
         variant="gradient"
-        contentClassName="p-5 navbar:hidden"
+        className="p-5 navbar:hidden"
         wrapperClassName="z-50"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
@@ -63,7 +63,7 @@ const Header = () => {
         <Button
           variant="gradient"
           wrapperClassName="text-white"
-          contentClassName="px-6 py-3 hover:text-primary-color1 transition duration-300"
+          className="px-6 py-3 hover:text-primary-color1 transition duration-300"
           href={authPortal.login.url}
           onClick={() => setIsMenuOpen(false)}
         >

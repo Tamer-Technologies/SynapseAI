@@ -1,5 +1,3 @@
-import styles from "./GradientWrapper.module.css";
-
 const GradientWrapper = ({
   children,
   className,
@@ -18,7 +16,7 @@ const GradientWrapper = ({
   };
 
   return (
-    <div className={`${styles.wrapper} ${className}`} style={variables}>
+    <div className={`wrapper ${className}`} style={variables}>
       {children}
     </div>
   );

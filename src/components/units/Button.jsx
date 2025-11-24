@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import GradientWrapper from "./units/GradientWrapper/GradientWrapper";
+import GradientWrapper from "./GradientWrapper";
 
 const Button = ({
-  contentClassName,
+  className,
   wrapperClassName,
   children,
   onClick,
@@ -14,10 +14,7 @@ const Button = ({
     if (variant === "gradient")
       return (
         <GradientWrapper className={wrapperClassName} {...rest}>
-          <button
-            className={`cursor-pointer ${contentClassName}`}
-            onClick={onClick}
-          >
+          <button className={`cursor-pointer ${className}`} onClick={onClick}>
             {children}
           </button>
         </GradientWrapper>
@@ -25,7 +22,7 @@ const Button = ({
 
     return (
       <button
-        className={`cursor-pointer ${contentClassName}`}
+        className={`cursor-pointer ticket ${className}`}
         onClick={onClick}
       >
         {children}
@@ -38,7 +35,7 @@ const Button = ({
       return (
         <GradientWrapper className={wrapperClassName} {...rest}>
           <Link
-            className={`cursor-pointer ${contentClassName}`}
+            className={`cursor-pointer ${className}`}
             onClick={onClick}
             to={href}
           >
@@ -49,7 +46,7 @@ const Button = ({
 
     return (
       <Link
-        className={`cursor-pointer ${contentClassName}`}
+        className={`cursor-pointer ticket ${className}`}
         onClick={onClick}
         to={href}
       >
