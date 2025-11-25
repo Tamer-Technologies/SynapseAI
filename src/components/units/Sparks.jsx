@@ -4,9 +4,10 @@ const Spark = ({ className }) => (
   />
 );
 
-const Sparks = ({ className }) => {
+const Sparks = ({ className, ref }) => {
   return (
     <div
+      ref={ref}
       className={`absolute w-full max-w-6xl  h-full  pointer-events-none ${className}`}
     >
       <Spark className="left-[10%] top-[10%]" />

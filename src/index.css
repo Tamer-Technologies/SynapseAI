@@ -42,7 +42,7 @@
     @apply inline-block;
   }
   h1 {
-    @apply text-5xl font-semibold tracking-wide;
+    @apply text-3xl lg:text-5xl font-semibold tracking-wide;
   }
   button {
     @apply cursor-pointer;
