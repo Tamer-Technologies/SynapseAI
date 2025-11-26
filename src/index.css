@@ -25,6 +25,12 @@
   }
 }
 
+@keyframes grad-loop {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @theme {
   --color-primary-dark: #0b040c;
   --color-gray-dark: #3b3b3b;
@@ -52,7 +58,10 @@
     @apply inline-block;
   }
   h1 {
-    @apply text-3xl lg:text-5xl font-semibold tracking-wide;
+    @apply text-3xl md:text-5xl lg:text-6xl font-semibold tracking-wide text-center;
+  }
+  h2 {
+    @apply text-2xl md:text-4xl lg:text-5xl font-semibold tracking-wide text-center;
   }
   button {
     @apply cursor-pointer;
@@ -183,6 +192,18 @@
     );
     animation: wrapper-loop 3s linear infinite;
     z-index: -1;
+  }
+
+  .featCard {
+    background-color: #96569f;
+    clip-path: path(
+      "M353.39 0C363.428 0 373.099 3.77415 380.483 10.5732L438.094 63.6172C446.32 71.191 451 81.8624 451 93.0439V411C451 433.091 433.091 451 411 451H40C17.9086 451 0 433.091 0 411V40C0 17.9086 17.9086 0 40 0H353.39Z"
+    );
+  }
+
+  .grad-border {
+    transform-origin: 50% 50%;
+    animation: grad-loop 10s linear infinite;
   }
 }
 

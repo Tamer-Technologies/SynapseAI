@@ -18,8 +18,11 @@ const Carousel = ({ className, imgSrcs, label }) => {
         className={`w-[80%] overflow-x-hidden m-auto fade-in-out ${className}`}
       >
         <div className="flex animate-carousel-loop w-max ">
-          {doubledImgSrcs.map((src) => (
-            <div className="h-10 md:h-15 navbar:h-20 flex-[0_0_auto] mx-10">
+          {doubledImgSrcs.map((src, index) => (
+            <div
+              className="h-10 md:h-15 navbar:h-20 flex-[0_0_auto] mx-5 md:mx-10"
+              key={src + index}
+            >
               <img src={src} alt="logo" className="w-auto" />
             </div>
           ))}

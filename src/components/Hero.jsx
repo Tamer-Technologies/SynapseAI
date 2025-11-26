@@ -31,7 +31,7 @@ const Hero = () => {
         </p>
         <Link
           to={authPortal.login.url}
-          className="bg-white text-primary-dark ticket py-2 px-8 font-sharp"
+          className="bg-white text-center text-primary-dark ticket py-2 px-8 font-sharp"
         >
           get started
         </Link>

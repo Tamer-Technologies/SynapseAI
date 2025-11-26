@@ -9,7 +9,7 @@ const Section = ({
 }) => {
   return (
     <div className={` ${firstSection && "pt-26.25 navbar:pt-23.75"}`}>
-      <section className="relative px-10">
+      <section className="relative px-0 md:px-5 lg:px-10 overflow-hidden">
         <div className={`container m-auto ${className} ${padding || "p-10"}`}>
           {children}
         </div>
