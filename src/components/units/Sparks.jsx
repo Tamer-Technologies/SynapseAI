@@ -8,7 +8,7 @@ const Sparks = ({ className, ref }) => {
   return (
     <div
       ref={ref}
-      className={`absolute w-full max-w-6xl  h-full  pointer-events-none ${className}`}
+      className={`absolute w-full h-full pointer-events-none ${className}`}
     >
       <Spark className="left-[10%] top-[10%]" />
       <Spark className="left-[2%] top-[40%] scale-75" />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { capitalizeFirst } from "../utilities/textFormat";
-import FeatCardShape from "../assets/icons/FeatCardShape";
+import FeatCardGradient from "../assets/icons/FeatCardGradient";
 import RobotFeatBg from "../assets/images/robot-feat-bg.png";
 import { useState } from "react";
 
@@ -23,30 +23,35 @@ const FeatCard = ({ title, desc, icon, className }) => {
     <div
       onClick={() => {
         setColor(getColor());
-        console.log("color changed");
       }}
-      className={`relative aspect-square isolate p-10 grid grid-rows-[auto_1fr_auto] grid-cols-[1fr_auto] gap-10 group ${className}`}
+      className={`relative lg:aspect-square isolate p-10 grid grid-rows-[auto_1fr_auto_auto] sm:grid-rows-[auto_1fr_auto] grid-cols-1 sm:grid-cols-[1fr_auto] gap-10 group ${className}`}
     >
-      <FeatCardShape
+      <FeatCardGradient
         className="absolute pointer-events-none -z-20 top-0 left-0 h-full w-full"
         style={{ color: color }}
-        id={crypto.randomUUID()}
+        aria-hidden
       />
-      <div className="absolute pointer-events-none -z-10 h-full w-full opacity-0 group-hover:opacity-30  duration-150">
+      <div
+        aria-hidden
+        className="absolute pointer-events-none -z-10 h-full w-full opacity-0 group-hover:opacity-30  duration-150"
+      >
         <img src={RobotFeatBg} alt="black robot" />
       </div>
       <p className="text-3xl sm:text-4xl lg:text-2xl font-semibold col-span-full">
         {capitalizeFirst(title)}
       </p>
-      <p className="text-gray-lite col-span-full sm:text-2xl lg:text-lg">
+      <p className="text-gray-lite col-span-full text-2xl lg:text-lg">
         {capitalizeFirst(desc)}
       </p>
-      <div className="h-13">
-        <img src={icon} alt={`${title} icon`} className="w-auto rounded-xl" />
+      <div
+        className={`h-13 aspect-square p-1.5 rounded-2xl place-self-center sm:place-self-start`}
+        style={{ backgroundColor: color }}
+      >
+        <img src={icon} alt={`${title} icon`} />
       </div>
       <Link
         to="#ask-anything"
-        className="self-center font-bold font-sharp uppercase text-xs sm:max-lg:text-lg p-4 pr-0 hover:text-primary-color1 duration-150"
+        className="place-self-center sm:place-self-start  font-bold font-sharp uppercase text-xs sm:max-lg:text-lg p-4 pr-0 hover:text-primary-color1 duration-150"
       >
         explore more <span className="ml-3">&gt;</span>
       </Link>

@@ -1,4 +1,3 @@
-import Carousel from "./Carousel";
 import Section from "./Section";
 import { features } from "../constants";
 import FeatCard from "./FeatCard";
@@ -6,12 +5,14 @@ import FeatCard from "./FeatCard";
 const Features = () => {
   return (
     <Section>
-      <Carousel label="helping people to make beautiful content at" />
       <div className="flex flex-col gap-20">
         <h2>
           Chat Smarter, Not Harder <br /> with SynapseAI
         </h2>
-        <div className="px-2 md:px-10 relative grid gap-10 grid-cols-[repeat(auto-fit,minmax(19.813rem,1fr))]">
+        <div
+          id="features"
+          className="sm:px-2 md:px-10 relative grid gap-10 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(17.813rem,1fr))] 2xl:grid-cols-[repeat(auto-fit,minmax(19.813rem,1fr))]"
+        >
           {features.map((item, index) => (
             <FeatCard
               key={item.title + index}

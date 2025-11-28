@@ -7,6 +7,7 @@ import RobotShadow from "../assets/images/robot-shadow.png";
 import Sparks from "./units/Sparks";
 import useMouseParallex from "../hooks/useMouseParallex";
 import Notification from "./units/Notification";
+import Carousel from "./units/Carousel";
 
 const Hero = () => {
   const ref = useMouseParallex();
@@ -37,18 +38,18 @@ const Hero = () => {
         </Link>
 
         <div className="relative pointer-events-none">
-          <div className="max-w-4xl gradient-border aspect-[3/1.5] rounded-2xl">
+          <div className="max-w-4xl gradient-border-css aspect-[3/1.5] rounded-2xl">
             <img src={Robot} alt="robot" className="rounded-xl" />
           </div>
           <Notification
             label="Code Generation"
             date="1m ago"
-            className="top-[10%] left-[-10%]"
+            className="top-[10%] left-[-12%] ml-10"
           />
           <Notification
             label="Code Generation"
             date="10m ago"
-            className="top-[60%] right-[-10%] absolute"
+            className="top-[60%] right-[-12%] absolute mr-10"
           />
           <img
             src={RobotShadow}
@@ -59,6 +60,9 @@ const Hero = () => {
         <div className="absolute  w-[60%] aspect-3/2 bg-primary-color1 blur-[9999px] opacity-25 rounded-full -z-10 pointer-events-none"></div>
 
         <Sparks className="-z-20" ref={ref} />
+        <div className="mb-5 mt-25 sm:mt-40 w-full">
+          <Carousel label="helping people to make beautiful content at" />
+        </div>
       </Section>
     </>
   );

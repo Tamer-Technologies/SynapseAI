@@ -1,10 +1,11 @@
 import Logo from "../assets/images/logo.png";
 import { authPortal, navigation } from "../constants/index";
 import { Link, useLocation } from "react-router-dom";
-import Button from "./units/Button";
+import ButtonVariant from "./units/ButtonVariant";
 import HamburgerMenu from "../assets/icons/hamburger-icon.svg?react";
 import CloseMenu from "../assets/icons/close-icon.svg?react";
 import { useState } from "react";
+import Sparks from "./units/Sparks";
 
 const Header = () => {
   const location = useLocation();
@@ -26,19 +27,18 @@ const Header = () => {
         <img src={Logo} alt="logo" width={226} height={48} />
       </Link>
 
-      <Button
+      <ButtonVariant
         variant="gradient"
-        className="p-5 navbar:hidden"
-        wrapperClassName="z-50"
+        className="p-5 z-50 navbar:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         {isMenuOpen ? <CloseMenu /> : <HamburgerMenu />}
-      </Button>
+      </ButtonVariant>
 
       <div
         className={`${
           !isMenuOpen && "hidden"
-        } absolute left-0 top-0 w-full flex flex-col gap-7 items-center justify-center h-dvh bg-primary-dark navbar:static navbar:flex navbar:flex-row navbar:h-full`}
+        } absolute left-0 top-0 w-full pt-25 navbar:p-0 flex flex-col gap-7 items-center navbar:justify-center bg-primary-dark h-dvh navbar:static navbar:flex navbar:flex-row navbar:h-full`}
       >
         <nav className="mx-auto">
           <ul className="flex flex-col gap-7 navbar:flex-row">
@@ -60,15 +60,13 @@ const Header = () => {
           {authPortal.register.name}
         </Link>
 
-        <Button
-          variant="gradient"
-          wrapperClassName="text-white"
-          className="px-6 py-3 hover:text-primary-color1 transition duration-300"
+        <ButtonVariant
+          className="px-6 py-3 text-white hover:text-primary-color1 transition duration-300"
           href={authPortal.login.url}
           onClick={() => setIsMenuOpen(false)}
         >
           {authPortal.login.name}
-        </Button>
+        </ButtonVariant>
       </div>
     </header>
   );

@@ -7,7 +7,7 @@
   inherits: false;
 }
 
-@keyframes wrapper-loop {
+@keyframes gradient-loop-css {
   0% {
     --angle: 0deg;
   }
@@ -25,7 +25,7 @@
   }
 }
 
-@keyframes grad-loop {
+@keyframes gradient-loop {
   100% {
     transform: rotate(360deg);
   }
@@ -52,7 +52,7 @@
     @apply bg-primary-dark text-white;
   }
   a {
-    @apply inline-block;
+    @apply inline-block cursor-pointer;
   }
   span {
     @apply inline-block;
@@ -67,114 +67,18 @@
     @apply cursor-pointer;
   }
   img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-cover inline-block;
   }
 }
 
 @layer components {
-  .ticket {
-    --point-distance: 1em;
-    clip-path: polygon(
-      calc(0% + var(--point-distance)) 0%,
-      calc(100% - var(--point-distance)) 0%,
-      100% calc(0% + var(--point-distance)),
-      100% 100%,
-      0 100%,
-      0% calc(0% + var(--point-distance))
-    );
-    position: relative;
-    isolation: isolate;
-  }
-  .ticket::before {
-    position: absolute;
-    content: "";
-    left: 50%;
-    top: 0%;
-    background-color: var(--color-primary-color1);
-    width: calc(100% - var(--point-distance));
-    height: 100%;
-    transform: translateX(-50%);
-    clip-path: polygon(50% 0, 0 0, 100% 0);
-    transition: all 0.15s;
-    z-index: -2;
-  }
-  .ticket::after {
-    position: absolute;
-    content: "";
-    left: 50%;
-    top: 50%;
-    border-left: 1px solid var(--color-primary-dark);
-    border-right: 1px solid var(--color-primary-dark);
-    width: calc(100% - (var(--point-distance) + 1rem));
-    height: 100%;
-    transform: translate(-50%, -50%);
-    transition: all 0.15s;
-    z-index: -1;
-  }
-
-  .ticket:hover::before {
-    clip-path: polygon(50% 50%, 0 0, 100% 0);
-  }
-
-  .ticket:active::before {
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
-  }
-  .wrapper {
-    --displacement-factor: calc(
-      var(--edge-size) + (var(--border-width) * 0.4142)
-    );
-    --gradient-border: conic-gradient(
-      from var(--angle),
-      var(--gradient-colors)
-    );
-
-    font-family: "Aldrich", sans-serif;
-    display: inline-block;
-    position: relative;
-    isolation: isolate;
-    clip-path: polygon(
-      0 0,
-      calc(100% - var(--edge-size)) 0,
-      100% calc(0% + var(--edge-size)),
-      100% 100%,
-      0 100%
-    );
-    animation: wrapper-loop var(--animation-speed) linear infinite;
-  }
-
-  .wrapper::before {
-    content: "";
-    background: var(--gradient-border);
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-  }
-
-  .wrapper::after {
-    content: "";
-    background-color: var(--color-primary-dark);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    clip-path: polygon(
-      /* Top Left */ var(--border-width) var(--border-width),
-      /* Top Right 1  */ calc(100% - var(--displacement-factor))
-        var(--border-width),
-      /* Top Right 2 */ calc(100% - var(--border-width))
-        var(--displacement-factor),
-      /* Bottom Right */ calc(100% - var(--border-width))
-        calc(100% - var(--border-width)),
-      /* Bottom Left */ var(--border-width) calc(100% - var(--border-width))
-    );
-  }
-
-  .gradient-border {
+  .gradient-border-css {
     position: relative;
     isolation: isolate;
     overflow: hidden;
     padding: 0.25rem;
   }
-  .gradient-border::before {
+  .gradient-border-css::before {
     content: "";
     position: absolute;
     top: 0;
@@ -190,20 +94,13 @@
       #58569f 75%,
       #96569f 100%
     );
-    animation: wrapper-loop 3s linear infinite;
+    animation: gradient-loop-css 3s linear infinite;
     z-index: -1;
-  }
-
-  .featCard {
-    background-color: #96569f;
-    clip-path: path(
-      "M353.39 0C363.428 0 373.099 3.77415 380.483 10.5732L438.094 63.6172C446.32 71.191 451 81.8624 451 93.0439V411C451 433.091 433.091 451 411 451H40C17.9086 451 0 433.091 0 411V40C0 17.9086 17.9086 0 40 0H353.39Z"
-    );
   }
 
   .grad-border {
     transform-origin: 50% 50%;
-    animation: grad-loop 10s linear infinite;
+    animation: gradient-loop 10s linear infinite;
   }
 }
 
