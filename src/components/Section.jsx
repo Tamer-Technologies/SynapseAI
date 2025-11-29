@@ -5,10 +5,11 @@ const Section = ({
   firstSection = false,
   crosses = true,
   className,
+  ...rest
 }) => {
   const section = (
-    <section className="relative p-2 md:p-5 lg:px-10 ">
-      <div className={`container m-auto p-5 sm:p-10 ${className}`}>
+    <section className="relative p-2 md:p-5 lg:px-10">
+      <div className={`container m-auto p-5 sm:p-10 ${className}`} {...rest}>
         {children}
       </div>
       {crosses && (

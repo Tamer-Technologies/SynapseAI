@@ -31,6 +31,24 @@
   }
 }
 
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-anti-clockwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 @theme {
   --color-primary-dark: #0b040c;
   --color-gray-dark: #3b3b3b;
@@ -47,6 +65,11 @@
   :root {
     font-family: "Inter", sans-serif;
     font-weight: 400;
+  }
+  *,
+  *::after,
+  *::before {
+    @apply scroll-smooth!;
   }
   body {
     @apply bg-primary-dark text-white;

@@ -11,7 +11,7 @@ const ButtonVariant = ({
   const renderButton = () => {
     if (variant === "gradient")
       return (
-        <button className={`${className} relative isolate`} onClick={onClick}>
+        <button className={`relative isolate ${className}`} onClick={onClick}>
           {children}
           <ButtonGradient
             aria-hidden
@@ -25,7 +25,7 @@ const ButtonVariant = ({
     if (variant === "gradient")
       return (
         <Link
-          className={`${className} relative isolate`}
+          className={`relative isolate ${className}`}
           onClick={onClick}
           to={href}
         >

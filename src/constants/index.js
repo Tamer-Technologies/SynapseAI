@@ -66,3 +66,18 @@ export const features = [
     icon: defaultIconBg,
   },
 ];
+
+export const collaborations = [
+  {
+    label: "seamless Integration",
+    desc: "with smart automation adn top-notch security, it's the perfect solution for teams looking to work smarter",
+  },
+  {
+    label: "Smart Automation",
+    desc: "with smart automation adn top-notch security, it's the perfect solution for teams looking to work smarter",
+  },
+  {
+    label: "Top-notch Secturity",
+    desc: "with smart automation adn top-notch security, it's the perfect solution for teams looking to work smarter",
+  },
+];

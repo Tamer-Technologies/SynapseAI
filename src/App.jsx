@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
 import { ScrollRestoration } from "react-router-dom";
+import Collaboration from "./components/Collaboration";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Hero />
       <Features />
+      <Collaboration />
     </div>
   );
 }
