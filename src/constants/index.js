@@ -81,3 +81,15 @@ export const collaborations = [
     desc: "with smart automation adn top-notch security, it's the perfect solution for teams looking to work smarter",
   },
 ];
+
+export const servicesSection = {
+  title: "generative AI made for creators",
+  desc: "synapseAI unlocks the potential of AI-powered applications",
+  sections: [
+    {
+      title: "smartest AI",
+      desc: "synapseAI unlocks the potential of AI-powered applications",
+      features: ["photo generating", "photo enchance", "seamless integration"],
+    },
+  ],
+};
