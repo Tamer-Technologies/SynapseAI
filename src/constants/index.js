@@ -93,3 +93,42 @@ export const servicesSection = {
     },
   ],
 };
+
+export const pricingPlans = [
+  {
+    name: "Basic",
+    color: "#D4C46A",
+    price: "$0",
+    description: "AI chatbot, personalized recommendations",
+    features: [
+      "An AI chatbot that can understand your queries",
+      "Personalized recommendations based on your preferences",
+      "Ability to explore the app and its features without any cost",
+    ],
+    buttonText: "GET STARTED",
+  },
+  {
+    name: "Premium",
+    color: "#c261d1",
+    price: "$9.99",
+    description: "Advanced AI chatbot, priority support, analytics dashboard",
+    features: [
+      "An advanced AI chatbot that can understand complex queries",
+      "An analytics dashboard to track your conversations",
+      "Priority support to solve issues quickly",
+    ],
+    buttonText: "GET STARTED",
+  },
+  {
+    name: "Enterprise",
+    color: "#E85959",
+    price: "Contact Us",
+    description: "Custom AI chatbot, advanced analytics, dedicated account",
+    features: [
+      "An AI chatbot that can understand your queries",
+      "Personalized recommendations based on your preferences",
+      "Ability to explore the app and its features without any cost",
+    ],
+    buttonText: "CONTACT US",
+  },
+];

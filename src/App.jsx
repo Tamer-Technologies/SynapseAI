@@ -4,6 +4,7 @@ import Features from "./components/Features";
 import { ScrollRestoration } from "react-router-dom";
 import Collaboration from "./components/Collaboration";
 import Services from "./components/Services";
+import Pricing from "./components/Pricing";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Features />
       <Collaboration />
       <Services />
+      <Pricing />
     </div>
   );
 }
