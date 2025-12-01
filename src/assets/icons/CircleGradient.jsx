@@ -30,8 +30,8 @@ const CircleGradient = ({ className }) => {
           y2="100%"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5A79C9" />
-          <stop offset="1" stop-color="#666666" />
+          <stop stopColor="#5A79C9" />
+          <stop offset="1" stopColor="#666666" />
         </linearGradient>
       </defs>
     </svg>

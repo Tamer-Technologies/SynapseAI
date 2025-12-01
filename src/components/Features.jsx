@@ -1,5 +1,5 @@
 import Section from "./Section";
-import { features } from "../constants";
+import { featuresSection } from "../constants";
 import FeatCard from "./FeatCard";
 
 const Features = () => {
@@ -7,12 +7,12 @@ const Features = () => {
     <Section id="features">
       <div className="flex flex-col gap-20">
         <h2>
-          Chat Smarter, Not Harder <br /> with SynapseAI
+          {featuresSection.heading.part1} <br /> {featuresSection.heading.part2}
         </h2>
         <div className="sm:px-2 md:px-10 relative grid gap-10 grid-cols-1 sm:grid-cols-[repeat(auto-fit,minmax(17.813rem,1fr))] 2xl:grid-cols-[repeat(auto-fit,minmax(19.813rem,1fr))]">
-          {features.map((item, index) => (
+          {featuresSection.features.map((item) => (
             <FeatCard
-              key={item.title + index}
+              key={item.id}
               title={item.title}
               desc={item.desc}
               icon={item.icon}

@@ -1,11 +1,10 @@
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/icons/logo.svg";
 import { authPortal, navigation } from "../constants/index";
 import { Link, useLocation } from "react-router-dom";
 import ButtonVariant from "./units/ButtonVariant";
 import HamburgerMenu from "../assets/icons/hamburger-icon.svg?react";
 import CloseMenu from "../assets/icons/close-icon.svg?react";
 import { useState } from "react";
-import Sparks from "./units/Sparks";
 
 const Header = () => {
   const location = useLocation();
@@ -24,11 +23,10 @@ const Header = () => {
   return (
     <header className="py-5.5 px-7.5 font-sharp fixed w-full text-gray-md text-md uppercase flex items-center gap-7 border-b border-gray-dark bg-primary-dark isolate z-50 justify-between">
       <Link to="#hero">
-        <img src={Logo} alt="logo" width={226} height={48} />
+        <img src={Logo} alt="logo" />
       </Link>
 
       <ButtonVariant
-        variant="gradient"
         className="p-5 z-50 navbar:hidden"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >

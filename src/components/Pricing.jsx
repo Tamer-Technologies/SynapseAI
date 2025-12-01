@@ -2,8 +2,7 @@ import Section from "./Section";
 import GradientCube from "../assets/icons/gradient-cube.svg?react";
 import PlanetsBackground from "../assets/icons/planets-bg.svg?react";
 import useMouseParallex from "../hooks/useMouseParallex";
-import { pricingPlans } from "../constants/index";
-import { capitalizeFirst } from "../utilities/textFormat";
+import { pricingSection } from "../constants/index";
 import ButtonVariant from "./units/ButtonVariant";
 import CheckMart from "../assets/icons/checkmark.svg?react";
 
@@ -20,20 +19,20 @@ const Pricing = () => {
           <GradientCube className="w-full h-auto max-w-70" aria-hidden="true" />
         </div>
         <p className="uppercase  text-2xl text-gray-lite text-center">
-          &#91; get started with synapseai &#93;
+          &#91; {pricingSection.subtitle} &#93;
         </p>
       </div>
-      <h2 className="col-span-full">Pay once, use forever</h2>
-      {pricingPlans.map((item) => (
+      <h2 className="col-span-full">{pricingSection.heading}</h2>
+      {pricingSection.plans.map((item) => (
         <div
-          key={item.name}
+          key={item.id}
           className="border-2 border-white/15 rounded-2xl px-3 py-7.5 md:px-10 flex flex-col h-full"
         >
           <h3
             className="text-2xl font-semibold md:text-4xl mb-3"
             style={{ color: `${item.color}` }}
           >
-            {capitalizeFirst(item.name)}
+            {item.name}
           </h3>
 
           <p className="text-gray-lite min-h-12 mb-3">{item.description}</p>
@@ -51,15 +50,28 @@ const Pricing = () => {
             </p>
           </div>
 
-          <ButtonVariant className="p-3 font-semibold mb-7.5 w-full">
-            {item.buttonText}
-          </ButtonVariant>
+          {item.name.toLowerCase() !== "enterprise" ? (
+            <ButtonVariant
+              variant="normal"
+              className="p-3 font-semibold mb-7.5 w-full"
+              href={item.cta.url}
+            >
+              {item.cta.buttonText}
+            </ButtonVariant>
+          ) : (
+            <ButtonVariant
+              className="p-3 font-semibold mb-7.5 w-full hover:text-primary-color1 duration-300"
+              href={item.cta.url}
+            >
+              {item.cta.buttonText}
+            </ButtonVariant>
+          )}
 
           <div className="grow flex flex-col gap-4">
             {item.features.map((feat) => (
-              <div key={feat} className="flex gap-5 items-center">
+              <div key={feat.id} className="flex gap-5 items-center">
                 <CheckMart className="h-5 w-auto text-primary-color1 shrink-0" />
-                <p>{feat}</p>
+                <p>{feat.text}</p>
               </div>
             ))}
           </div>

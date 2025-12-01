@@ -1,21 +1,8 @@
 import { Link } from "react-router-dom";
-import { capitalizeFirst } from "../utilities/textFormat";
 import FeatCardGradient from "../assets/icons/FeatCardGradient";
 import RobotFeatBg from "../assets/images/robot-feat-bg.png";
 import { useState } from "react";
-
-function getColor() {
-  const colors = [
-    "#c261d1",
-    "#6184d1",
-    "#61d1ba",
-    "#d16181",
-    "#d1c061",
-    "#7661d1",
-  ];
-  const randomIndex = Math.floor(Math.random() * colors.length);
-  return colors[randomIndex];
-}
+import { getColor } from "../utilities/getColors";
 
 const FeatCard = ({ title, desc, icon, className }) => {
   const [color, setColor] = useState(getColor());
@@ -38,11 +25,9 @@ const FeatCard = ({ title, desc, icon, className }) => {
         <img src={RobotFeatBg} alt="black robot" />
       </div>
       <p className="text-3xl sm:text-4xl lg:text-2xl font-semibold col-span-full">
-        {capitalizeFirst(title)}
+        {title}
       </p>
-      <p className="text-gray-lite col-span-full text-2xl lg:text-lg">
-        {capitalizeFirst(desc)}
-      </p>
+      <p className="text-gray-lite col-span-full text-2xl lg:text-lg">{desc}</p>
       <div
         className={`h-13 aspect-square p-1.5 rounded-2xl place-self-center sm:place-self-start`}
         style={{ backgroundColor: color }}
