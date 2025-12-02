@@ -1,6 +1,6 @@
 # 🌟 SynapseAI (AI Chat Application Frontend Concept)
 
-# Link: https://synapse-ai-gilt.vercel.app/
+Link: https://synapse-ai-gilt.vercel.app/
 
 ![image](https://github.com/user-attachments/assets/61e07de8-1789-455d-93bf-97d0ecc92c51)
 
