@@ -24,11 +24,13 @@ const ServiceHeader = ({ title, description }) => (
 
 const ServiceCard1 = ({ data }) => (
   <div className="px-10 pt-25 pb-10 col-span-full relative isolate overflow-hidden rounded-2xl border-2 border-white/10 grid grid-cols-1 gap-10 md:grid-cols-2 md:p-10">
-    <img
-      src={images[data.image]}
-      alt={data.title}
-      className="absolute left-0 top-0 -z-20 pointer-events-none brightness-50 md:static md:brightness-100 md:rounded-2xl"
-    />
+    <div className="absolute -z-10 h-full w-full rounded-2xl overflow-hidden pointer-events-none brightness-50 md:brightness-100 md:relative aspect-14/15">
+      <img src={images[data.image]} alt={data.title} />
+      <div
+        className="absolute top-0 left-0 w-full h-full z-10 bg-linear-to-b from-black/80 md:bg-linear-to-t md:from-black/70"
+        aria-hidden="true"
+      />
+    </div>
     <div className="flex flex-col gap-5 md:my-auto">
       <h3 className="text-2xl font-semibold">{data.title}</h3>
       <p className="text-gray-lite">{data.description}</p>
@@ -55,7 +57,10 @@ const ServiceCard1 = ({ data }) => (
 
 const ServiceCard2 = ({ data }) => (
   <div className="rounded-2xl p-10 overflow-hidden border-2 border-white/10 relative isolate aspect-9/13">
-    <div className="absolute top-0 left-0 w-full h-full -z-10 bg-linear-to-t from-black">
+    <div
+      className="absolute top-0 left-0 w-full h-full -z-10 bg-linear-to-t from-black"
+      aria-hidden="true"
+    >
       <img
         src={images[data.image]}
         alt={data.title}
@@ -77,7 +82,10 @@ const ServiceCard3 = ({ data }) => (
     <p className="text-gray-lite">{data.description}</p>
 
     <div className="absolute h-full w-full overflow-hidden top-0 left-0 -z-50 rounded-2xl">
-      <div className="h-full w-full bg-linear-to-b from-black/70 absolute z-10 top-0 left-0" />
+      <div
+        className="h-full w-full bg-linear-to-b from-black/70 absolute z-10 top-0 left-0"
+        aria-hidden="true"
+      />
       <img
         src={images[data.image]}
         alt={data.title}

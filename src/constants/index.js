@@ -319,3 +319,14 @@ export const pricingSection = {
     },
   ],
 };
+
+// ========================================
+// FOOTER SECTION
+// ========================================
+export const footerData = {
+  // Copyright/Legal info
+  copyright: {
+    text: "© 2025 SynapseAI. All rights reserved.",
+    url: "#",
+  },
+};

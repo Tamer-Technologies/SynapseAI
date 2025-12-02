@@ -5,6 +5,7 @@ import { ScrollRestoration } from "react-router-dom";
 import Collaboration from "./components/Collaboration";
 import Services from "./components/Services";
 import Pricing from "./components/Pricing";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Collaboration />
       <Services />
       <Pricing />
+      <Footer />
     </div>
   );
 }
