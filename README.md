@@ -1,5 +1,7 @@
 # 🌟 SynapseAI (AI Chat Application Frontend Concept)
 
+![image](https://github.com/user-attachments/assets/61e07de8-1789-455d-93bf-97d0ecc92c51)
+
 This repository hosts the complete, static frontend design for an AI chat application, SynapseAI.
 This project is a proof-of-concept built entirely on a design specification, demonstrating a modular, high-fidelity user interface (UI) without including any live backend or AI processing logic.
 
