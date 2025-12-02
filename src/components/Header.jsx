@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header className="py-5.5 px-7.5 font-sharp fixed w-full text-gray-md text-md uppercase flex items-center gap-7 border-b border-gray-dark bg-primary-dark isolate z-50 justify-between">
       <Link to="#hero">
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo" width={226} height={48} />
       </Link>
 
       <ButtonVariant

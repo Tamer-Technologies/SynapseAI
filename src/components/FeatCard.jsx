@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import FeatCardGradient from "../assets/icons/FeatCardGradient";
-import RobotFeatBg from "../assets/images/robot-feat-bg.png";
+import RobotFeatBg from "../assets/images/robot-feat-bg.webp";
 import { useState } from "react";
 import { getColor } from "../utilities/getColors";
 
@@ -22,7 +22,7 @@ const FeatCard = ({ title, desc, icon, className }) => {
         aria-hidden
         className="absolute pointer-events-none -z-10 h-full w-full opacity-0 group-hover:opacity-30  duration-150"
       >
-        <img src={RobotFeatBg} alt="black robot" />
+        <img src={RobotFeatBg} alt="black robot" width={894} height={982} />
       </div>
       <p className="text-3xl sm:text-4xl lg:text-2xl font-semibold col-span-full">
         {title}
@@ -32,7 +32,7 @@ const FeatCard = ({ title, desc, icon, className }) => {
         className={`h-13 aspect-square p-1.5 rounded-2xl place-self-center sm:place-self-start`}
         style={{ backgroundColor: color }}
       >
-        <img src={icon} alt={`${title} icon`} />
+        <img src={icon} alt={`${title} icon`} width={24} height={24} />
       </div>
       <Link
         to="#ask-anything"

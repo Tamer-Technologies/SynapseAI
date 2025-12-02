@@ -1,7 +1,7 @@
 import Section from "./Section";
 import HeadingLine from "../assets/icons/heading-line.svg?react";
-import Robot from "../assets/images/robot.png";
-import RobotShadow from "../assets/images/robot-shadow.png";
+import Robot from "../assets/images/robot.webp";
+import RobotShadow from "../assets/images/robot-shadow.webp";
 import useMouseParallex from "../hooks/useMouseParallex";
 import Notification from "./units/Notification";
 import Carousel from "./units/Carousel";
@@ -40,7 +40,13 @@ const Hero = () => {
 
         <div className="relative pointer-events-none">
           <div className="max-w-4xl gradient-border-css aspect-[3/1.5] rounded-2xl">
-            <img src={Robot} alt="robot" className="rounded-xl" />
+            <img
+              src={Robot}
+              alt="robot"
+              className="rounded-xl"
+              width={962}
+              height={935}
+            />
           </div>
           {heroSection.notifications.map((item) => (
             <Notification
@@ -54,6 +60,8 @@ const Hero = () => {
             src={RobotShadow}
             aria-hidden="true"
             className="absolute h-auto w-full left-0 -top-[47.5%] -z-10 opacity-50"
+            width={962}
+            height={935}
           />
         </div>
         <div

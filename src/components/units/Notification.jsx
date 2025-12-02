@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AiChat from "../../assets/images/ai-chat.png";
+import AiChat from "../../assets/images/ai-chat.webp";
 import fetchRandomUsers from "../../utilities/fetchRandomUsers";
 
 const Notification = ({
@@ -32,6 +32,8 @@ const Notification = ({
       <div className="h-15 aspect-square rounded-xl overflow-hidden">
         <img
           src={mainImageSrc ? mainImageSrc : AiChat}
+          width={872}
+          height={872}
           alt="notification profile picture"
         />
       </div>
@@ -46,6 +48,8 @@ const Notification = ({
               >
                 <img
                   src={image.src}
+                  width={10}
+                  height={10}
                   alt={`avatar`}
                   className="w-full h-full object-cover"
                 />

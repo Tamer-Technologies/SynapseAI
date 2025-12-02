@@ -1,16 +1,16 @@
 import Section from "./Section";
-import RobotV1 from "../assets/images/robot-v1.png";
-import RobotV2 from "../assets/images/robot-v2.png";
-import DeviceV1 from "../assets/images/device-v1.png";
+import RobotV1 from "../assets/images/robot-v1.webp";
+import RobotV2 from "../assets/images/robot-v2.webp";
+import DeviceV1 from "../assets/images/device-v1.webp";
 import CheckMark from "../assets/icons/checkmark.svg?react";
 import LoadingIcon from "../assets/icons/loading-icon.svg?react";
 import ChatMessage from "../assets/icons/chat-message.svg?react";
 import { servicesSection } from "../constants";
 
 const images = {
-  "robot-v1": RobotV1,
-  "robot-v2": RobotV2,
-  "device-v1": DeviceV1,
+  "robot-v1": { src: RobotV1, width: 946, height: 787 },
+  "robot-v2": { src: RobotV2, width: 533, height: 793 },
+  "device-v1": { src: DeviceV1, width: 783, height: 795 },
 };
 
 const ServiceHeader = ({ title, description }) => (
@@ -25,7 +25,12 @@ const ServiceHeader = ({ title, description }) => (
 const ServiceCard1 = ({ data }) => (
   <div className="px-10 pt-25 pb-10 col-span-full relative isolate overflow-hidden rounded-2xl border-2 border-white/10 grid grid-cols-1 gap-10 md:grid-cols-2 md:p-10">
     <div className="absolute -z-10 h-full w-full rounded-2xl overflow-hidden pointer-events-none brightness-50 md:brightness-100 md:relative aspect-14/15">
-      <img src={images[data.image]} alt={data.title} />
+      <img
+        alt={data.title}
+        src={images[data.image].src}
+        width={images[data.image].width}
+        height={images[data.image].height}
+      />
       <div
         className="absolute top-0 left-0 w-full h-full z-10 bg-linear-to-b from-black/80 md:bg-linear-to-t md:from-black/70"
         aria-hidden="true"
@@ -62,7 +67,9 @@ const ServiceCard2 = ({ data }) => (
       aria-hidden="true"
     >
       <img
-        src={images[data.image]}
+        src={images[data.image].src}
+        width={images[data.image].width}
+        height={images[data.image].height}
         alt={data.title}
         className="w-full h-full object-cover opacity-50"
       />
@@ -87,7 +94,9 @@ const ServiceCard3 = ({ data }) => (
         aria-hidden="true"
       />
       <img
-        src={images[data.image]}
+        src={images[data.image].src}
+        width={images[data.image].width}
+        height={images[data.image].height}
         alt={data.title}
         className="w-full h-full object-cover brightness-30 sm:brightness-100"
       />
